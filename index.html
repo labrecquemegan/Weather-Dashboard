@@ -13,12 +13,29 @@
     </header>
     <aside class="city-search">
         <h2>Search for a City:</h2>
-        <textarea class="searchBar" placeholder="Enter a city name"></textarea>
+        <input type="search" class="searchBar" placeholder="Enter a city name"></input>
         <button class="searchBtn">Search</button>
         <hr>
-        
+        <button class="cityBtn">Austin</button>
+        <button class="cityBtn">Chicago</button>
+        <button class="cityBtn">New York</button>
+        <button class="cityBtn">Orlando</button>
+        <button class="cityBtn">San Francisco</button>
+        <button class="cityBtn">Seattle</button>
+        <button class="cityBtn">Denver</button>
+        <button class="cityBtn">Atlanta</button>
     </aside>
 
+    <section class="weather">
+        <h2 class="cityName date"></h2>
+        <p class="temp">Temp: <span id="tempInput"></span></p>
+        <p class="wind">Wind: <span id="windInput"></span></p>
+        <p class="humidity">Humidity: <span id="humInput"></span></p>
+        <p class="UV">UV Index: <span id=UVInput></span></p>
+    </section>
+    
+    <section class="forcast"></section>
 
+    <script src="script.js"></script>
 </body>
 </html>
