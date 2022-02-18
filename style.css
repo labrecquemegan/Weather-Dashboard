@@ -15,7 +15,7 @@ aside h2 {
     font-size: 30px;
 }
 
-.searchbar {
+#searchbar {
     width: auto;
     border-radius: 12%;
     margin-bottom: 5px;
