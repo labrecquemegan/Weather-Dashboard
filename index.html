@@ -12,10 +12,12 @@
 </head>
 
 <body>
-    <header class = "container-fluid">
+    <div class = "container-fluid">
+    <header class = "row">
         <h1>Weather Dashboard</h1>
     </header>
-    <aside class="city-search ">
+    <div class = "row" id="row2">
+    <aside class="city-search col-lg-4">
         <h2>Search for a City:</h2>
         <input type="text" id="searchBar" placeholder="Enter a city name"></input>
         <button class="submitBtn" id="searchBtn">Search</button>
@@ -23,8 +25,9 @@
         <div id="searchedBtns"></div>
     </aside>
 
-    <section class="weather">
-        <div class = "boarder container-sm mx-auto">
+    <div class = "col-lg-8">
+    <section class="weather row">
+        <div class = "boarder container-sm">
         <h2 class="cityName date"></h2>
         <p class="temp">Temp: <span id="tempInput"></span></p>
         <p class="wind">Wind: <span id="windInput"></span></p>
@@ -33,7 +36,7 @@
     </div>
     </section>
 
-    <section class="forcast"></section>
+    <section class="forcast row">
     <div class="container-sm mx-auto">
         <div class="col cardhere" id="newCards">
            <div class="card m-2" style="width: 10rem;">
@@ -50,7 +53,9 @@
         </div>
     </div>
 </section>
-
+</div>
+</div>
+</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
         integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
@@ -62,6 +67,7 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

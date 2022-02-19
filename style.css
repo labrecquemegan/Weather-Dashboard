@@ -7,8 +7,8 @@ header {
 }
 
 aside {
-    float: left;
-    margin: 20px;
+    /* float: left;
+    margin: 20px; */
     height: 100vh;
 }
 
@@ -45,6 +45,11 @@ aside hr {
     margin: 5px;
 }
 
+#row2 {
+    width: 100%;
+    margin: 0;
+}
+
 .weather {
     margin-top: 20px;
 }
@@ -53,13 +58,11 @@ aside hr {
     border: 1px black solid;
 }
 
-section .forcast {
+/* section .forcast {
     display: flex;
-   /* justify-content: space-around; */
-}
+} */
 
 .cardhere {
-    width: 20rem;
     display: flex;
-    /* justify-content: space-evenly; */ 
+    justify-content: space-evenly;
 }

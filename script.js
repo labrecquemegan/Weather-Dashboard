@@ -81,9 +81,8 @@ function forcastcards(data) {
   
   newCards.innerHTML = `
   <div class="card-header">
-     <h2>${(moment().format("MMM Do YY"))};
-     </h2>
-      <h2>${data.daily[i].weather[0].icon}</h2>
+     <p>${(moment().add(i, "days").format("MMM Do YY"))}</p>
+      <img src= 'http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}@2x.png'/>
   </div>
   <div class="list-group list-group-flush">
       <li class="list-group-item">
