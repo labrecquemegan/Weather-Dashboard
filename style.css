@@ -55,5 +55,11 @@ aside hr {
 
 section .forcast {
     display: flex;
-   justify-content: space-around;
+   /* justify-content: space-around; */
+}
+
+.cardhere {
+    width: 20rem;
+    display: flex;
+    /* justify-content: space-evenly; */ 
 }

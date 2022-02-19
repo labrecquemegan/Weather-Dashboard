@@ -12,6 +12,8 @@ var cityArray = JSON.parse(localStorage.getItem("cityHistory"))
   ? JSON.parse(localStorage.getItem("cityHistory"))
   : [];
 var searchedBtns = document.getElementById("searchedBtns");
+var newCards = document.getElementById('newCards')
+var date = document.querySelector(".date")
 
 var formSubmitHandler = function (event) {
   // prevents page from refreshing
@@ -55,8 +57,9 @@ function retrieveWeatherData(cityName) {
 }
 
 function renderCurrentWeather(data) {
+  date.textContent = `${(moment().format("MMM Do YY"))}`
   tempInput.textContent = `${data.current.temp}`;
-  windInput.textContent = `${data.current.weather.wind_speed}`;
+  windInput.textContent = `${data.current.wind_speed}`;
   humInput.textContent = `${data.current.humidity}%`;
   UVInput.textContent = `${data.current.uvi}`;
   UVIndexColor(data.current.uvi);
@@ -67,28 +70,32 @@ function fiveDayForcast(data) {
   forcastedTemp.textContent = `${data.daily[0].feels_like.day}`;
   forcastedWind.textContent = `${data.daily[0].wind_speed}`;
   //   autopopulating cards
-  // forcastcards(data)
+  forcastcards(data)
 }
 
-// function forcastcards(data) {
-//   let newCards = document.createElement("div");
-//   newCards.classList.add("card-header");
+function forcastcards(data) {
+  newCards.innerHTML = ""
+  for (let i = 1; i < 6; i++) {
+    let newCards = document.createElement("div");
+    newCards.classList.add("card-header");
+  
+  newCards.innerHTML = `
+  <div class="card-header">
+     <h2>${(moment().format("MMM Do YY"))};
+     </h2>
+      <h2>${data.daily[i].weather[0].icon}</h2>
+  </div>
+  <div class="list-group list-group-flush">
+      <li class="list-group-item">
+  </div>
+  <div class="list-group-item" id="forcastedTemp">Temp: ${data.daily[i].feels_like.day} </div>
+    <div class="list-group-item" id="forcastedWind">Wind: ${data.daily[i].wind_speed}</div>
+    </div>
+  </div>`;
 
-//   newCards.innerHTML = `
-//   <div class="card-header">
-//      <h2>day</h2>
-//       <h2>Icon</h2>
-//   </div>
-//   <div class="list-group list-group-flush">
-//       <li class="list-group-item">
-//   </div>
-//   <div class="list-group-item" id="forcastedTemp"> </div>
-//     <div class="list-group-item" id="forcastedWind"> </div>
-//     </div>
-//   </div>`;
-
-//   document.querySelector(".card").append(newCards);
-// }
+  document.querySelector(".cardhere").append(newCards);
+}
+}
 
 function UVIndexColor(data) {
   if (data <= 3) {
