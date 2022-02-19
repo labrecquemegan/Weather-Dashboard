@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <header>
+    <header class = "container-fluid">
         <h1>Weather Dashboard</h1>
     </header>
-    <aside class="city-search">
+    <aside class="city-search ">
         <h2>Search for a City:</h2>
         <input type="text" id="searchBar" placeholder="Enter a city name"></input>
         <button class="submitBtn" id="searchBtn">Search</button>
@@ -23,16 +23,18 @@
         <div id="searchedBtns"></div>
     </aside>
 
-    <section class="weather container-fluid">
+    <section class="weather">
+        <div class = "boarder container-sm mx-auto">
         <h2 class="cityName date"></h2>
         <p class="temp">Temp: <span id="tempInput"></span></p>
         <p class="wind">Wind: <span id="windInput"></span></p>
         <p class="humidity">Humidity: <span id="humInput"></span></p>
         <p class="UV">UV Index: <span id=UVInput></span></p>
+    </div>
     </section>
 
     <section class="forcast"></section>
-    <div class="container-fluid">
+    <div class="container-sm">
         <div class="col">
            <div class="card m-2" style="width: 10rem;">
                 <div class="card-header">

@@ -1,8 +1,3 @@
-// function to save to local storage
-// a way to pull items from local storage
-// utalize weather api
-// use info from yhe API to build the display
-// dynamically change based on city
 // global variables
 var submitBtn = document.getElementById("searchBtn");
 var searchHistory = [];
@@ -72,8 +67,28 @@ function fiveDayForcast(data) {
   forcastedTemp.textContent = `${data.daily[0].feels_like.day}`;
   forcastedWind.textContent = `${data.daily[0].wind_speed}`;
   //   autopopulating cards
-  
+  // forcastcards(data)
 }
+
+// function forcastcards(data) {
+//   let newCards = document.createElement("div");
+//   newCards.classList.add("card-header");
+
+//   newCards.innerHTML = `
+//   <div class="card-header">
+//      <h2>day</h2>
+//       <h2>Icon</h2>
+//   </div>
+//   <div class="list-group list-group-flush">
+//       <li class="list-group-item">
+//   </div>
+//   <div class="list-group-item" id="forcastedTemp"> </div>
+//     <div class="list-group-item" id="forcastedWind"> </div>
+//     </div>
+//   </div>`;
+
+//   document.querySelector(".card").append(newCards);
+// }
 
 function UVIndexColor(data) {
   if (data <= 3) {
@@ -102,13 +117,14 @@ function historyBtn() {
   searchedBtns.innerHTML = "";
   for (let i = 0; i < cityArray.length; i++) {
     var cityButton = document.createElement("button");
+    cityButton.classList.add("cityBtn");
     cityButton.innerText = cityArray[i];
     searchedBtns.appendChild(cityButton);
     cityButton.addEventListener("click", function (event) {
       event.preventDefault();
       console.log("hit");
       console.log(event.target.innerText);
-      retrieveWeatherData(event.target.innerText)
+      retrieveWeatherData(event.target.innerText);
     });
   }
 }

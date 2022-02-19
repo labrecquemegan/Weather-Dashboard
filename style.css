@@ -9,6 +9,7 @@ header {
 aside {
     float: left;
     margin: 20px;
+    height: 100vh;
 }
 
 aside h2 {
@@ -45,8 +46,11 @@ aside hr {
 }
 
 .weather {
-    border: black;
-    margin: 20px;
+    margin-top: 20px;
+}
+
+.boarder {
+    border: 1px black solid;
 }
 
 section .forcast {
